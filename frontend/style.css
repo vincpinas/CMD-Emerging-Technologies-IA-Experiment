@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+select, option {
+    text-transform: capitalize;
+}
+
+body {
+    font-family: Nunito, sans-serif;
+    font-weight: 500;
+    background: rgb(237, 247, 255);
+    padding: 3rem 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+
+hr {
+    width: 20rem;
+    border: 1px solid rgb(186, 206, 215);
+    margin: 2rem 0;
+}
+
+h2 {
+    margin-bottom: 1rem;
+}
+
+ul, ol {
+    list-style: none;
+    width: fit-content;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    background: rgb(211, 227, 245);
+    border-radius: 5px;
+    max-height: 10rem;
+    width: 20rem;
+    overflow-y: scroll;
+}
+
+li:has(button.selected-speaker, button.selected-subreddit) {
+    border: 3px solid hsl(222, 96%, 56%);
+}
+
+button.selected-speaker, button.selected-subreddit {
+    background: #4c87ed;
+    border: 2px solid #3770f6;
+}
+
+li {
+    padding: 2px;
+    border-radius: 5px;
+    border: 3px solid transparent;
+
+    button {
+        background: #0A5FF4;
+        color: white;
+        border: 2px solid #1955E4;
+        text-transform: capitalize;
+        padding: 0.5rem 4rem;
+        border-radius: 5px;
+        cursor: pointer;
+        
+        width: 100%;
+    }
+}
+
+.record {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.5rem;
+
+    button {
+        background: white;
+        border: none;
+        transition: 400ms;
+        border-radius: 3px;
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 1.2em;
+        color: #1C63F0;
+        border: 2px solid #1955E4;
+    }
+
+    .clip {
+        background: rgb(255, 255, 255);
+        height: 2.5rem;
+        width: 16rem;
+        border-radius: 3px;
+    }
+}
+
+label {
+    margin-top: 0.5rem;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+
+    input {
+        width: 1rem;
+        height: 1rem;
+    }
+}
+
+.submit {
+    background: white;
+    border: 2px solid #1C63F0;
+    text-transform: capitalize;
+    padding: 0.5rem 1rem;
+    color: #1C63F0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submit:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
