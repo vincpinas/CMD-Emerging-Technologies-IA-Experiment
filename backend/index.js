@@ -19,8 +19,6 @@ const storage = multer.diskStorage(
     {
         destination: 'speakers/temp',
         filename: function (req, file, cb) {
-            //req.body is empty...
-            //How could I get the new_file_name property sent from client here?
             cb(null, file.originalname + ".wav");
         }
     }
@@ -80,7 +78,10 @@ app.post('/script', upload.single("audio_blob"), async (req, res) => {
         // send data to browser
         res.send(output_path)
         busy = false;
-        if (existsSync("speakers/temp/" + req.body.speaker)) unlink("speakers/temp/" + req.body.speaker);
+        if (existsSync("speakers/temp/" + req.body.speaker)) unlink("speakers/temp/" + req.body.speaker, (err) => {
+            if (err) throw err;
+            console.log('path/file.txt was deleted');
+        });
     });
 })
 

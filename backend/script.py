@@ -18,9 +18,9 @@ user_agent = "praw_scraper_1.0"
 
 reddit = praw.Reddit(
     username="TrueChampion2007",
-    password="Lolaapje123",
-    client_id="7zamGuxJVBmWFxJEzOyP1Q",
-    client_secret="houXWmsobJgTgwQoueZ2sezoboO-Sw",
+    password="",
+    client_id="",
+    client_secret="",
     user_agent=user_agent,
 )
 
